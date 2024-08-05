@@ -1,0 +1,9 @@
+#! /usr/bin/env php
+<?php
+
+use Symfony\Component\Console\Application;
+
+require 'vendor/autoload.php';
+
+$app = new Application('Movepedia', '1.0.0');
+$app->run();
