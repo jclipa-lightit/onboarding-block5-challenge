@@ -1,9 +1,14 @@
 #! /usr/bin/env php
 <?php
 
+use Block5Challenge\ShowCommand;
+use GuzzleHttp\Client;
 use Symfony\Component\Console\Application;
 
 require 'vendor/autoload.php';
 
+$OMBDBAPI_BASE_URL = 'http://www.omdbapi.com/';
+
 $app = new Application('Movepedia', '1.0.0');
+$app->add(new ShowCommand(new Client(['base_uri' => $OMBDBAPI_BASE_URL])));
 $app->run();
